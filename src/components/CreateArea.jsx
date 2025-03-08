@@ -6,7 +6,7 @@ import Fab from "@material-ui/core/Fab";
 function CreateArea(props) {
   const [note, setNote] = useState({
     title: "",
-    content: ""
+    content: "",
   });
   const [isClick, setClick] = useState(false);
 
@@ -16,17 +16,25 @@ function CreateArea(props) {
     setNote((prevNote) => {
       return {
         ...prevNote,
-        [name]: value
+        [name]: value,
       };
     });
   }
 
   function submitNote(event) {
-    props.onAdd(note);
-    setNote({
-      title: "",
-      content: ""
-    });
+    console.log("Submitting note:", note);
+
+    // Only submit if there's content
+    if (note.title.trim() || note.content.trim()) {
+      props.onAdd(note);
+      setNote({
+        title: "",
+        content: "",
+      });
+    } else {
+      console.log("Note is empty, not submitting");
+    }
+
     event.preventDefault();
   }
 
