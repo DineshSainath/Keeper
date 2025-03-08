@@ -36,24 +36,15 @@ function Profile() {
 
   return (
     <Container component="main" maxWidth="sm">
-      <Box
-        sx={{
-          marginTop: 8,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Box display="flex" width="100%" justifyContent="flex-start" mb={2}>
-          <Button
-            component={Link}
-            to="/"
-            startIcon={<ArrowBackIcon />}
-            color="primary"
-          >
-            Back to Notes
-          </Button>
-        </Box>
+      <div className="auth-container">
+        <Button
+          component={Link}
+          to="/"
+          startIcon={<ArrowBackIcon />}
+          className="back-button"
+        >
+          Back to Notes
+        </Button>
 
         <Typography component="h1" variant="h5">
           Profile
@@ -65,20 +56,23 @@ function Profile() {
           </Alert>
         )}
 
-        <Card style={{ width: "100%", marginTop: "1rem" }}>
-          <CardContent>
-            <Typography variant="h6">Email: {currentUser.email}</Typography>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleLogout}
-              style={{ marginTop: "1rem" }}
-            >
-              Log Out
-            </Button>
-          </CardContent>
-        </Card>
-      </Box>
+        <div className="profile-card">
+          <Typography
+            variant="h6"
+            style={{ fontFamily: "Montserrat, sans-serif" }}
+          >
+            Email: {currentUser.email}
+          </Typography>
+          <Button
+            variant="contained"
+            className="logout-button"
+            onClick={handleLogout}
+            style={{ marginTop: "1rem" }}
+          >
+            Log Out
+          </Button>
+        </div>
+      </div>
     </Container>
   );
 }

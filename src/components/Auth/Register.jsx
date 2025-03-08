@@ -45,14 +45,7 @@ function Register() {
 
   return (
     <Container component="main" maxWidth="xs">
-      <Box
-        sx={{
-          marginTop: 8,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+      <div className="auth-container">
         <Typography component="h1" variant="h5">
           Register for Keeper
         </Typography>
@@ -113,7 +106,6 @@ function Register() {
             fullWidth
             variant="contained"
             color="primary"
-            style={{ marginTop: "1rem" }}
             disabled={loading}
           >
             Register
@@ -124,7 +116,7 @@ function Register() {
             </Typography>
           </Box>
         </Box>
-      </Box>
+      </div>
     </Container>
   );
 }

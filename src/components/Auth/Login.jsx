@@ -42,14 +42,7 @@ function Login() {
 
   return (
     <Container component="main" maxWidth="xs">
-      <Box
-        sx={{
-          marginTop: 8,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+      <div className="auth-container">
         <Typography component="h1" variant="h5">
           Sign in to Keeper
         </Typography>
@@ -97,7 +90,6 @@ function Login() {
             fullWidth
             variant="contained"
             color="primary"
-            style={{ marginTop: "1rem" }}
             disabled={loading}
           >
             Sign In
@@ -108,7 +100,7 @@ function Login() {
             </Typography>
           </Box>
         </Box>
-      </Box>
+      </div>
     </Container>
   );
 }

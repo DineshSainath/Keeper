@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import Button from "@material-ui/core/Button";
+import PersonIcon from "@material-ui/icons/Person";
 
 function Header() {
   const { currentUser } = useAuth();
@@ -15,9 +16,15 @@ function Header() {
             component={Link}
             to="/profile"
             color="inherit"
-            style={{ color: "white" }}
+            style={{
+              color: "white",
+              fontFamily: "Montserrat, sans-serif",
+              textTransform: "none",
+              fontSize: "1rem",
+            }}
+            startIcon={<PersonIcon />}
           >
-            Profile
+            {currentUser.email.split("@")[0]}
           </Button>
         </div>
       )}
