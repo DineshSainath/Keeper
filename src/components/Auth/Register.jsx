@@ -26,8 +26,10 @@ function Register() {
     try {
       setError("");
       setLoading(true);
-      const { user, error: registerError } =
-        await createUserWithEmailAndPassword(email, password);
+      const { error: registerError } = await createUserWithEmailAndPassword(
+        email,
+        password
+      );
 
       if (registerError) {
         setError(registerError);

@@ -21,7 +21,7 @@ function Login() {
     try {
       setError("");
       setLoading(true);
-      const { user, error: loginError } = await signInWithEmailAndPassword(
+      const { error: loginError } = await signInWithEmailAndPassword(
         email,
         password
       );
