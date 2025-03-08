@@ -31,9 +31,25 @@ A note-taking application with user authentication and cloud storage.
      }
      ```
    - Get your Firebase configuration from Project Settings > General > Your apps > Firebase SDK snippet > Config
-   - Update the `firebaseConfig` object in `src/config/firebase.js` with your configuration
+   - Create a `.env` file in the root directory based on the `.env.example` file
+   - Add your Firebase configuration values to the `.env` file:
+     ```
+     REACT_APP_FIREBASE_API_KEY=your_api_key
+     REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+     REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+     REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+     REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+     REACT_APP_FIREBASE_APP_ID=your_app_id
+     REACT_APP_FIREBASE_MEASUREMENT_ID=your_measurement_id
+     ```
 
 4. Run `npm start` to start the development server
+
+## Security Note
+
+- The `.env` file contains sensitive information and is excluded from version control in `.gitignore`
+- Never commit your Firebase API keys or other secrets to your repository
+- For production deployment, set environment variables in your hosting platform (Vercel, Netlify, etc.)
 
 ## Technologies Used
 
